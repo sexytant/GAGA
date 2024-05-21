@@ -11,11 +11,10 @@ class unsupervisedGeneticDraw(unsupervisedGenetic):
     def __init__(self,
                  mutator: Mutator,
                  population: Population,
-                 plot: Plot,
                  selector: Selector = NaiveSelector,
                  crossover: Crossover = None) -> None:
         super().__init__(mutator, population, selector, crossover)
-        self.plot=plot
+        self.plot=Plot()
         self.plot.expressPopulation(self.population)
         self.elect()
 
