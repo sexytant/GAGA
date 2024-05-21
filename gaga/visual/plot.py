@@ -26,7 +26,7 @@ class Plot(Express):
         for shape in image.gene:
             ax.add_artist(self.plotShape(shape))
         ax.axis("off")
-        ax.set_title(str(image.id))
+        ax.set_title(str(image.displayName))
 
     def plotImage(self,generation: int,image:Image,size: int,index: int):
         self.expressIndividual(image,size,index)

@@ -27,7 +27,8 @@ class unsupervisedGeneticDraw(unsupervisedGenetic):
         for i in range(1,self.population.size):
             child=Image((self.population.size-1)*self.population.generation+i,
                              mutator.mutateGene(gene),
-                             None)
+                             None,
+                             elite.id)
             self.population.individuals[i]=child
         self.plot.expressPopulation(self.population)
         self.elect()
