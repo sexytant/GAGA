@@ -16,7 +16,6 @@ class unsupervisedGeneticDraw(unsupervisedGenetic):
                  crossover: Crossover = None) -> None:
         super().__init__(mutator, population, selector, crossover)
         self.plot=plot
-        print("generation:%s" % self.population.generation)
         self.plot.expressPopulation(self.population)
         self.elect()
 
