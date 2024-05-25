@@ -1,5 +1,5 @@
 from abc import ABC,abstractmethod
-from gaga.general.component import Individual
+from gaga.cga.component import Individual
 
 class Fitness(ABC):
     @abstractmethod

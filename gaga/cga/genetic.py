@@ -1,8 +1,8 @@
 from abc import ABC
-from gaga.general.mutator import Mutator
-from gaga.general.component import Population, Individual
-from gaga.general.selector import Selector, NaiveSelector
-from gaga.general.crossover import Crossover
+from gaga.cga.mutator import Mutator
+from gaga.cga.component import Population, Individual
+from gaga.cga.selector import Selector, NaiveSelector
+from gaga.cga.crossover import Crossover
 
 
 class Genetic(ABC):

@@ -1,5 +1,5 @@
 from abc import ABC,abstractmethod
-from gaga.general.component import Individual, Population
+from gaga.cga.component import Individual, Population
 from random import random
 from typing import List
 

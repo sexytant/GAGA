@@ -1,6 +1,6 @@
 from abc import ABC,abstractmethod
-from gaga.general.component import Codon
-#from GA.general.probability import Probability
+from gaga.cga.component import Codon
+
 from typing import List
 
 class Mutator(ABC):

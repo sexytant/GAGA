@@ -1,5 +1,5 @@
 from abc import ABC,abstractmethod
-from gaga.general.component import Codon,Individual,Population
+from gaga.cga.component import Codon,Individual,Population
 
 class Express(ABC):
     @abstractmethod

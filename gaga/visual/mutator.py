@@ -1,5 +1,5 @@
 from typing import List
-from gaga.general.mutator import Mutator
+from gaga.cga.mutator import Mutator
 from gaga.visual.component import Shape
 from random import randint
 from copy import deepcopy

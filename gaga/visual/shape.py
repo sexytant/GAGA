@@ -1,6 +1,6 @@
 from gaga.visual.component import Shape
 from typing import Sequence
-from gaga.general.component import Base
+from gaga.cga.component import Base
 from random import randint,random
 
 class Ellipse(Shape):

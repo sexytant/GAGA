@@ -1,4 +1,4 @@
-from gaga.general.component import Base,Codon,Individual
+from gaga.cga.component import Base,Codon,Individual
 from typing import Sequence,List
 
 class Shape(Codon):

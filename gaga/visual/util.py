@@ -1,6 +1,6 @@
 from gaga.visual.component import Shape,Image
 from gaga.visual.shape import Ellipse
-from gaga.general.component import Base
+from gaga.cga.component import Base
 from random import random
 from typing import List
 
