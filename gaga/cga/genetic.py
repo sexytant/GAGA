@@ -1,29 +1,41 @@
-from abc import ABC
+from abc import ABC,abstractmethod
 from gaga.cga.mutator import Mutator
-from gaga.cga.component import Population, Individual
+from gaga.cga.component import Creator,Evaluator
 from gaga.cga.selector import Selector, NaiveSelector
 from gaga.cga.crossover import Crossover
 
-
-class Genetic(ABC):
-    def __init__(self,mutator:Mutator,
-                 population: Population,
-                 selector:Selector =NaiveSelector,
-                 crossover:Crossover=None) -> None:
+class GA(ABC):
+    def __init__(self,
+                 creator:Creator,
+                 mutator:Mutator,
+                 selector:Selector,
+                 crossover:Crossover,
+                 evaluator:Evaluator,
+                 populationSize:int) -> None:
+        self.creator=creator
         self.mutator=mutator
-        self.population=population
-        self.mostfit=population.individuals[0]
         self.selector=selector
         self.crossover=crossover
+        self.evaluator=evaluator
+        self.population=self.creator.create(popSize=populationSize)
+        self.generation=0
+    @abstractmethod
+    def evaluate(self):
+        pass
 
+    @abstractmethod
     def step(self):
-        raise NotImplementedError
+        pass
     
     def run(self,iter):
-        while(self.population.generation<iter):
+        while(self.generation<iter):
+            self.evaluate()
             self.step()
+            self.generation=self.generation+1
 
-class unsupervisedGenetic(Genetic):
+
+"""
+class unsupervisedGenetic(GA):
     def step(self):
         elite=self.selector.select(self.population)
         self.population.generation=self.population.generation+1
@@ -42,3 +54,4 @@ class unsupervisedGenetic(Genetic):
         total=sum(vote)
         for i in range(self.population.size):
             self.population.individuals[i].score=1.0-vote[i]/total
+"""
