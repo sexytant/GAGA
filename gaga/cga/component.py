@@ -1,4 +1,4 @@
-from abc import ABC
+from abc import ABC,abstractmethod
 from typing import List,Sequence
 
 class Base:
@@ -124,6 +124,12 @@ class Population:
         self.generation=generation
         self.individuals=individuals
 
+class Creator(ABC):
+    @abstractmethod
+    def create(self,popSize):
+        raise NotImplementedError
 
-
-
+class Evaluator(ABC):
+    @abstractmethod
+    def evaluate(individiaul:Individual):
+        NotImplementedError
